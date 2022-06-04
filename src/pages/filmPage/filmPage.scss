@@ -1,0 +1,17 @@
+.film-page__content {
+  display: flex;
+}
+
+.film-page__left {
+  width: 70%;
+}
+
+.film-page__right {
+  width: 30%;
+}
+
+.film-page__buy-film {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
