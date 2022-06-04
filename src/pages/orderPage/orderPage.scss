@@ -1,6 +1,8 @@
 .order-page {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 100px;
 }
 
 .order-page__left {

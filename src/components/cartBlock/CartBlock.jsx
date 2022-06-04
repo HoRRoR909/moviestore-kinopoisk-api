@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import {BiCartAlt} from 'react-icons/bi'
 import CartMenu from '../cartMenu/CartMenu'
@@ -15,13 +15,13 @@ const CartBlock = () => {
   const [isCartMenuVisible, setIsCartMenuVisible] = useState(false)
   const items = useSelector(state => state.cart.itemsInCart)
   const totalPrice = calcTotalPrice(items)
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleClick = useCallback(() => {
     setIsCartMenuVisible(false)
-    history.push("/order")
+    navigate("/order")
 
-  }, [history]) // useCallback чтобы не терялась ссылка на функцию
+  }, [navigate]) // useCallback чтобы не терялась ссылка на функцию
 
   return (
     <div className='cart-block'>

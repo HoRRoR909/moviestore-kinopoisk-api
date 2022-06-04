@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { setCurrentFilm } from '../../redux/films/reducer'
@@ -10,11 +10,11 @@ import FilmGenre from '../filmGenre/FilmGenre'
 import './filmItem.scss'
 
 const FilmItem = ({ film }) => {
-  const history = useHistory()
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const handleClick = () => {
     dispatch(setCurrentFilm(film))
-    history.push(`/app/${film.title}`)
+    navigate(`/app/${film.title}`)
   }
   return (
     <div className='film-item' onClick={handleClick}>
