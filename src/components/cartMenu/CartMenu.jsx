@@ -11,7 +11,7 @@ const CartMenu = ({items, onClick}) => {
     <div className='cart-menu'>
       <div className="cart-menu__films-list">
         {
-          items.length > 0 ? items.map((film) => <CartItem key={film.title} {...film} />) : "Корзина пуста"
+          items.length > 0 ? items.map((film) => <CartItem key={film.nameRu} {...film} />) : "Корзина пуста"
         }
       </div>
       {

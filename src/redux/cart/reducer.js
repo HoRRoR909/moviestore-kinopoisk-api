@@ -13,7 +13,7 @@ const cartSlice = createSlice({
       state.itemsInCart.push(action.payload)
     },
     deleteItemFromCart: (state, action) => {
-      state.itemsInCart = state.itemsInCart.filter(film => film.id !== action.payload)
+      state.itemsInCart = state.itemsInCart.filter(film => film.filmId !== action.payload)
     }
   }
 })

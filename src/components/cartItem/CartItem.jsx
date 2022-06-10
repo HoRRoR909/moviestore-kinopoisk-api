@@ -2,12 +2,12 @@ import React from 'react'
 
 import './cartItem.scss'
 
-const CartItem = ({title, price, id}) => {
+const CartItem = ({nameRu, year, filmId}) => {
   return (
     <div className='cart-item'>
-      <span>{title}</span>
+      <span>{nameRu}</span>
       <div className="cart-item__price">
-        <span>{price} ₽</span>
+        <span>{year} ₽</span>
       </div>
     </div>
   )

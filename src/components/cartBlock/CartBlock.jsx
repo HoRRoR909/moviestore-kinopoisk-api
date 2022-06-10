@@ -21,7 +21,7 @@ const CartBlock = () => {
     setIsCartMenuVisible(false)
     navigate("/order")
 
-  }, [navigate]) // useCallback чтобы не терялась ссылка на функцию
+  }, [navigate])
 
   return (
     <div className='cart-block'>

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import './filmCover.scss'
 
 const FilmCover = ({image=""}) => {
@@ -7,5 +6,5 @@ const FilmCover = ({image=""}) => {
     <div className='film-cover'style={{ backgroundImage: `url(${image})` }} ></div>
   )
 }
-
+  
 export default FilmCover

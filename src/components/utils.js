@@ -1,1 +1,1 @@
-export const calcTotalPrice = items => items.reduce((acc, film) => acc += film.price , 0)
+export const calcTotalPrice = items => items.reduce((acc, film) => acc += parseInt(film.year, 10) , 0)

@@ -11,12 +11,12 @@ const FilmBuy = ({film}) => {
   const dispatch = useDispatch()
 
   const items = useSelector(state => state.cart.itemsInCart)
-  const isItemInCart = items.some((item) => item.id === film.id)
+  const isItemInCart = items.some((item) => item.filmId === film.filmId)
 
   const handleClick = (e) => {
     e.stopPropagation()
     if (isItemInCart) {
-      dispatch(deleteItemFromCart(film.id))
+      dispatch(deleteItemFromCart(film.filmId))
     } else {
       dispatch(setItemInCart(film))
     } 
@@ -25,7 +25,7 @@ const FilmBuy = ({film}) => {
 
   return (
     <div className='film-buy'>
-      <span className='film-buy__price'>{film.price} ₽</span> 
+      <span className='film-buy__price'>{film.year} ₽</span> 
       <Button type={isItemInCart ? "secondary" : "primary"} onClick={handleClick} >
         {isItemInCart ? "Убрать из корзины" : "В корзину"}
       </Button>
