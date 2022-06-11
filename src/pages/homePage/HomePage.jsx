@@ -2,25 +2,42 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import FilmItem from '../../components/filmItem/FilmItem'
 import FilmItemPreloaded from '../../components/filmItem/FilmItemPreloaded'
-import { getFilms } from '../../redux/films/reducer'
+import { getAxiosFilms } from '../../redux/films/reducer'
+import {setCurrentPage} from '../../redux/films/reducer'
+import { createPages } from '../../components/utils'
 import './homePage.scss'
 
 const HomePage = () => {
   const dispatch = useDispatch()
-  const films = useSelector((state) => state.filmsReducer.films) 
-  const isLoading = useSelector((state) => state.filmsReducer.isLoading)
+  const {films, isLoading, currentPage, totalPages, searchParams} = useSelector((state) => state.filmsReducer) 
+  const pages = []
+
+  createPages(pages, totalPages, currentPage)
 
   useEffect(() => {
-    dispatch(getFilms())
-  }, [dispatch])
+    dispatch(getAxiosFilms(currentPage))
+  }, [currentPage, dispatch])
 
   return (
-    <div className='home-page'>
-      {
-        isLoading
-        ? Array(20).fill(0).map((_, index) => <FilmItemPreloaded key={index}/>)
-        : films && films.map(film => <FilmItem film={film} key={film.filmId} />) 
-      }
+    
+    <div className="home-page">
+      <div className='films-list'>
+        {
+          isLoading
+          ? Array(20).fill(0).map((_, index) => <FilmItemPreloaded key={index}/>)
+          : films && films.map(film => <FilmItem film={film} key={film.filmId} />) 
+        }
+      </div>
+      <div className="pages">
+        {pages.map((page) => <span 
+          className={currentPage === page ? 'current-page' : 'page'} 
+          key={page}
+          onClick={() => dispatch(setCurrentPage(page))}
+          >
+          {page}
+          </span>
+        )}
+      </div>
     </div>
   )
 }

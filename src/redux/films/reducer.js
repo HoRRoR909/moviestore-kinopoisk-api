@@ -1,23 +1,26 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import filmsService from '../services/axiosFilmService'
 
-export const getFilms = createAsyncThunk('GET_FILMS', async (_, thunkAPI) => {
+export const getAxiosFilms = createAsyncThunk('GET_FILMS', async (currentPage, _, thunkAPI) => {
+
   try {
-    return await filmsService.getFilms()
+    return await filmsService.getFilms(currentPage)
+    
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data)
   }
 })
-
 const initialState = {
+  searchParams: [],
   films: null,
   currentFilm: null,
+  currentPage: 1,
+  totalPages: null,
   isError: false,
   isLoading: false,
   status: null,
   message: ''
 } 
-
 
 const filmsSlice = createSlice({
   name: "films",
@@ -25,21 +28,25 @@ const filmsSlice = createSlice({
   reducers: {
     setCurrentFilm: (state, action) => {
       state.currentFilm = action.payload
+    },
+    setCurrentPage: (state, action) => {
+      state.currentPage = action.payload
     }
   },
   extraReducers: {
-    [getFilms.pending]: (state) => {
+    [getAxiosFilms.pending]: (state) => {
       state.status = 'pending'
       state.isLoading = true
       console.log('films.pending');
     },
-    [getFilms.fulfilled]: (state, action) => {
+    [getAxiosFilms.fulfilled]: (state, action) => {
       state.status = 'loading'
       state.isLoading = false
       state.films = action.payload.films
+      state.totalPages = action.payload.pagesCount
       console.log('films.fulfilled');
     },
-    [getFilms.rejected]: (state, action) => {
+    [getAxiosFilms.rejected]: (state, action) => {
       state.status = 'rejected'
       state.isLoading = false
       state.isError = true
@@ -50,5 +57,5 @@ const filmsSlice = createSlice({
   }
 })
 
-export const { setCurrentFilm } = filmsSlice.actions
+export const { setCurrentFilm, setCurrentPage } = filmsSlice.actions
 export default filmsSlice.reducer

@@ -1,10 +1,11 @@
 .film-genre {
   background-color: rgb(80, 82, 84);
   padding: 2px 5px;
+  margin: 5px 0px;
   font-size: 13px;
   border-radius: 10px;
 }
 
 .film-genre:not(:last-child) {
-  margin-right: 7px;
+  margin-right: 4px;
 }

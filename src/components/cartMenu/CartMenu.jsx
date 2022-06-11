@@ -24,6 +24,7 @@ const CartMenu = ({items, onClick}) => {
           <Button type="primary" size="m" onClick={onClick} >
             Оформить заказ
           </Button>
+          
         </div>
         : null
       }

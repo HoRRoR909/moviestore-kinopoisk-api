@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import FilmCover from '../../components/filmCover/FilmCover'
+import FilmPageCover from '../../components/filmPageCover/FilmPageCover'
 import FilmGenre from '../../components/filmGenre/FilmGenre'
 import FilmBuy from '../../components/filmBuy/FilmBuy'
 
@@ -26,10 +26,10 @@ const FilmPage = () => {
           ></iframe> */}
         </div>
         <div className="film-page__right">
-          <FilmCover image={film.posterUrl} />
+          <FilmPageCover image={film.posterUrl} />
           <p>{film.nameRu}</p>
-          <p className='secondary-text'>Популярные метки этого продукта:</p>
-          {/* {film.genres.map((genre) => (<FilmGenre genre={genre} key={genre} />))} */}
+          <p className='secondary-text'>Жанры:</p>
+          {film.genres.map((genre) => (<FilmGenre genre={genre} key={genre.genre} />))}
           <div className="film-page__buy-film">
             <FilmBuy film={film} />
           </div>
