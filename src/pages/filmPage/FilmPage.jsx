@@ -17,14 +17,17 @@ const FilmPage = () => {
       <h1 className='film-page__title'>{film.nameRu}</h1>
       <div className="film-page__content">
         <div className="film-page__left">
-          {/* <iframe 
+          <iframe 
             width="90%"
             height="400px"
-            src={film.video}
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
             title="YouTube Video Player"
             frameBorder="0"
-          ></iframe> */}
+          ></iframe>
+          <div className="description">API Кинопоиска не дает ссылку ютуб, поэтому так. </div>
+          <div className="description">Описания к фильмам тоже отсуствуют :( </div>
         </div>
+        
         <div className="film-page__right">
           <FilmPageCover image={film.posterUrl} />
           <p>{film.nameRu}</p>

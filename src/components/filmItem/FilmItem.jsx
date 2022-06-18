@@ -23,6 +23,7 @@ const FilmItem = ({ film }) => {
         <div className="film-item__genre">
           {film.genres.map((genre) => <FilmGenre genre={genre} key={genre.genre} />)}
         </div>
+        <div className="rating">{film.rating}</div>
         <div className="film-item__buy">
           <FilmBuy film={film} />
         </div>
