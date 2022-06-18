@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className='header'>
       <div className="wrapper">
-        <Link to='/' className='header__store-title'>
+        <Link to='/moviestore-kinopoisk-api' className='header__store-title'>
           movie store
         </Link>
       </div>

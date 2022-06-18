@@ -13,7 +13,7 @@ const FilmItem = ({ film }) => {
 
   const handleClick = () => {
     dispatch(setCurrentFilm(film))
-    navigate(`/app/${film.nameRu}`)
+    navigate(`/moviestore-kinopoisk-api/${film.nameRu}`)
   }
   return (
     <div className='film-item' onClick={handleClick}>

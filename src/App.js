@@ -13,9 +13,9 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/app/:title" element={<FilmPage />} />
-            <Route path="/order" element={<OrderPage />}/>
+            <Route path="/moviestore-kinopoisk-api" element={<HomePage />} />
+            <Route path="/moviestore-kinopoisk-api/:title" element={<FilmPage />} />
+            <Route path="/moviestore-kinopoisk-api/order" element={<OrderPage />}/>
           </Routes>
         </div>
       </Router>

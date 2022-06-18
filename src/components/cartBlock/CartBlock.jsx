@@ -19,7 +19,7 @@ const CartBlock = () => {
 
   const handleClick = useCallback(() => {
     setIsCartMenuVisible(false)
-    navigate("/order")
+    navigate("/moviestore-kinopoisk-api/order")
 
   }, [navigate])
 

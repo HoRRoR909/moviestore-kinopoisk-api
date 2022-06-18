@@ -24,7 +24,7 @@ const FilmPage = () => {
             title="YouTube Video Player"
             frameBorder="0"
           ></iframe>
-          <div className="description">API Кинопоиска не дает ссылку ютуб, поэтому так. </div>
+          <div className="description">API Кинопоиска не дает ссылку на ютуб, поэтому так. </div>
           <div className="description">Описания к фильмам тоже отсуствуют :( </div>
         </div>
         

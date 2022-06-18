@@ -9,7 +9,7 @@ import './homePage.scss'
 
 const HomePage = () => {
   const dispatch = useDispatch()
-  const {films, isLoading, currentPage, totalPages, searchParams} = useSelector((state) => state.filmsReducer) 
+  const {films, isLoading, currentPage, totalPages} = useSelector((state) => state.filmsReducer) 
   const pages = []
 
   createPages(pages, totalPages, currentPage)
