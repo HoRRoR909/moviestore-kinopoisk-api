@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/moviestore-kinopoisk-api/static/css/main.17a1f3db.css",
+    "main.js": "/moviestore-kinopoisk-api/static/js/main.f23557d3.js",
+    "index.html": "/moviestore-kinopoisk-api/index.html",
+    "main.17a1f3db.css.map": "/moviestore-kinopoisk-api/static/css/main.17a1f3db.css.map",
+    "main.f23557d3.js.map": "/moviestore-kinopoisk-api/static/js/main.f23557d3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17a1f3db.css",
+    "static/js/main.f23557d3.js"
+  ]
+}
