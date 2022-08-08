@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/moviestore-kinopoisk-api/static/css/main.17a1f3db.css",
-    "main.js": "/moviestore-kinopoisk-api/static/js/main.099314cc.js",
+    "main.css": "/moviestore-kinopoisk-api/static/css/main.0322a769.css",
+    "main.js": "/moviestore-kinopoisk-api/static/js/main.184b3ac5.js",
     "index.html": "/moviestore-kinopoisk-api/index.html",
-    "main.17a1f3db.css.map": "/moviestore-kinopoisk-api/static/css/main.17a1f3db.css.map",
-    "main.099314cc.js.map": "/moviestore-kinopoisk-api/static/js/main.099314cc.js.map"
+    "main.0322a769.css.map": "/moviestore-kinopoisk-api/static/css/main.0322a769.css.map",
+    "main.184b3ac5.js.map": "/moviestore-kinopoisk-api/static/js/main.184b3ac5.js.map"
   },
   "entrypoints": [
-    "static/css/main.17a1f3db.css",
-    "static/js/main.099314cc.js"
+    "static/css/main.0322a769.css",
+    "static/js/main.184b3ac5.js"
   ]
 }
