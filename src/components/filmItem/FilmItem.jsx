@@ -1,10 +1,10 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { paths } from '../../paths'
 import { useDispatch } from 'react-redux'
-import { setCurrentFilm } from '../../redux/films/reducer'
+import { setCurrentFilm } from '../../redux/films/filmsReducer'
 import FilmCover from '../filmCover/FilmCover'
 import FilmBuy from '../filmBuy/FilmBuy'
-import FilmGenre from '../filmGenre/FilmGenre'
 import './filmItem.scss'
 
 const FilmItem = ({ film }) => {
@@ -13,22 +13,21 @@ const FilmItem = ({ film }) => {
 
   const handleClick = () => {
     dispatch(setCurrentFilm(film))
-    navigate(`/moviestore-kinopoisk-api/${film.nameRu}`)
+    navigate(`${paths.film}/${film.filmId}`)
   }
   return (
-    <div className='film-item' onClick={handleClick}>
-      <FilmCover image={film.posterUrl}/>
-      <div className="film-item__details">
-        <span className='film-item__title'>{film.nameRu}</span>
-        <div className="film-item__genre">
-          {film.genres.map((genre) => <FilmGenre genre={genre} key={genre.genre} />)}
-        </div>
-        <div className="rating">{film.rating}</div>
-        <div className="film-item__buy">
-          <FilmBuy film={film} />
+    
+      <div className='film-item' onClick={handleClick}>
+        <FilmCover image={film.posterUrl}/>
+        <div className="film-item__details">
+          <span className='film-item__title'>{film.nameRu}</span>
+          <div className="rating">{film.rating}</div>
+          <div className="film-item__buy">
+            <FilmBuy film={film} />
+          </div>
         </div>
       </div>
-    </div>
+    
   )
 }
 

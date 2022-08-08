@@ -5,6 +5,7 @@ import HomePage from "./pages/homePage/HomePage";
 import Header from "./components/header/Header";
 import FilmPage from "./pages/filmPage/FilmPage";
 import OrderPage from "./pages/orderPage/OrderPage";
+import { paths } from "./paths";
 
 function App() {
   return (
@@ -13,9 +14,9 @@ function App() {
         <div className="App">
           <Header />
           <Routes>
-            <Route path="/moviestore-kinopoisk-api" element={<HomePage />} />
-            <Route path="/moviestore-kinopoisk-api/:title" element={<FilmPage />} />
-            <Route path="/moviestore-kinopoisk-api/order" element={<OrderPage />}/>
+            <Route path={paths.home} element={<HomePage />} />
+            <Route path={`${paths.film}/:id`} element={<FilmPage />} />
+            <Route path={paths.order} element={<OrderPage />}/>
           </Routes>
         </div>
       </Router>

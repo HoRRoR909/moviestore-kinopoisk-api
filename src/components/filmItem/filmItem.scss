@@ -1,8 +1,8 @@
 .film-item {
   text-decoration: none;
   color: white;
-  width: 240px;
-  height: 550px;
+  width: 250px;
+  height: 520px;
   background-color: rgb(36, 44, 74);
   border-radius: 15px;
   cursor: pointer;
@@ -17,7 +17,7 @@
 
 .film-item:not(:last-child) {
   margin-bottom: 30px;
-  margin-right: 30px;
+  // margin-right: 30px;
 }
 
 .film-item__title {

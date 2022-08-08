@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import filmsService from '../services/axiosFilmService'
 
-export const getAxiosFilms = createAsyncThunk('GET_FILMS', async (currentPage, _, thunkAPI) => {
+export const getAxiosFilms = createAsyncThunk('GET_FILMS', async (currentPage, thunkAPI) => {
 
   try {
     return await filmsService.getFilms(currentPage)
@@ -10,6 +10,7 @@ export const getAxiosFilms = createAsyncThunk('GET_FILMS', async (currentPage, _
     return thunkAPI.rejectWithValue(error.response.data)
   }
 })
+
 const initialState = {
   searchParams: [],
   films: null,
@@ -35,19 +36,19 @@ const filmsSlice = createSlice({
   },
   extraReducers: {
     [getAxiosFilms.pending]: (state) => {
-      state.status = 'pending'
+      state.status = 'films-pending'
       state.isLoading = true
       console.log('films.pending');
     },
     [getAxiosFilms.fulfilled]: (state, action) => {
-      state.status = 'loading'
+      state.status = 'films-fulfilled'
       state.isLoading = false
       state.films = action.payload.films
       state.totalPages = action.payload.pagesCount
       console.log('films.fulfilled');
     },
     [getAxiosFilms.rejected]: (state, action) => {
-      state.status = 'rejected'
+      state.status = 'films-rejected'
       state.isLoading = false
       state.isError = true
       state.message = action.payload.message

@@ -17,7 +17,7 @@ const OrderItem = ({film}) => {
   return (
     <div className='order-item'>
       <div className="order-item__cover">
-        <FilmCover image={film.posterUrl}/>
+        <img src={film.posterUrl} alt="poster" height='150px'/>
       </div>
       <div className="order-item__title">
         <span>{film.nameRu}</span>

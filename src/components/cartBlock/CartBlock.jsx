@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-
 import {BiCartAlt} from 'react-icons/bi'
 import CartMenu from '../cartMenu/CartMenu'
 import ItemsInCart from '../itemsInCart/ItemsInCart'

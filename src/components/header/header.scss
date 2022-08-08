@@ -1,14 +1,15 @@
 .header {
   height: 80px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
+
 }
 
-.wrapper {
+.header_wrapper {
   display: flex;
-  flex-grow: 1;
+  // flex-grow: 1;
 }
 
 .header__store-title {

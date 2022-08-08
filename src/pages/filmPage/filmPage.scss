@@ -1,22 +1,91 @@
+.title_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .film-page__title {
+    margin: 0;
+  }
+
+  .film-page__buy-film {
+    margin: 0;
+  }
+}
+
+.original_name {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.gallery_container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  z-index: 5;
+  user-select: none;
+
+  .cross {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    top: 50px;
+    left: -350px;
+    z-index: 6;
+    font-size: 70px;
+    cursor: pointer;
+    
+    opacity: .8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 .film-page__content {
   display: flex;
 }
 
 .film-page__left {
   width: 70%;
+  margin-bottom: 50px;
+
+  .slogan {
+    margin: 20px 0;
+  }
+
+  .desc_title {
+    margin: 0;
+  }
 
   .description {
     width: 90%;
-    margin-top: 20px;
+    margin-top: 5px;
+  }
+  
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
   }
 }
 
 .film-page__right {
   width: 30%;
-}
 
-.film-page__buy-film {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
+  .poster {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .youtube {
+    margin: 10px 0;
+    border-radius: 6px;
+  }
 }

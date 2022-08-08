@@ -1,0 +1,41 @@
+.wrapper {
+  width: 681px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  .main-container {
+  margin: 20px 0px;
+  
+
+    .window {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 4px;
+      
+
+      .all-pages-container {
+        height: 100%;
+        display: flex;
+        transition: translate;
+        transition-property: transform;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+        cursor: pointer;
+      }
+    }
+  }
+  .arrow {
+    font-size: 40px;
+    cursor: pointer;
+    color: rgb(181, 181, 181);
+    margin: 0px 5px 5px 5px;
+    user-select: none;
+
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
+  }
+}

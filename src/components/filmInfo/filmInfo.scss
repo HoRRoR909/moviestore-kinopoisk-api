@@ -1,0 +1,20 @@
+.about_film_container {
+
+  .info_item {
+    display: flex; 
+    width: 90%;
+  
+    .info_title {
+      width: 30%;
+      margin: 10px 0;
+    }
+
+    .info_desc {
+      width: 70%;
+      margin: 10px 0;
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

@@ -2,16 +2,16 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import FilmItem from '../../components/filmItem/FilmItem'
 import FilmItemPreloaded from '../../components/filmItem/FilmItemPreloaded'
-import { getAxiosFilms } from '../../redux/films/reducer'
-import {setCurrentPage} from '../../redux/films/reducer'
+import { getAxiosFilms } from '../../redux/films/filmsReducer'
+import {setCurrentPage} from '../../redux/films/filmsReducer'
 import { createPages } from '../../components/utils'
 import './homePage.scss'
 
 const HomePage = () => {
   const dispatch = useDispatch()
   const {films, isLoading, currentPage, totalPages} = useSelector((state) => state.filmsReducer) 
+  
   const pages = []
-
   createPages(pages, totalPages, currentPage)
 
   useEffect(() => {
