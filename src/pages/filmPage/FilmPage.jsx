@@ -44,20 +44,20 @@ const FilmPage = () => {
 
   return (
     <div className='film-page'>
-      {showGallery && <div className="gallery_container overflow"
-    >
-      <Carousel pageWidth={1000} imgCount={1} imgWidth={1000} imgHeight={800}>
-        { 
-          !isImageLoaded
-          ? <img 
-          className='item' 
-          src="https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/a9b7373f-8165-4d2f-a960-8caa2fb38cc1/300x" 
-          alt="123" />
-          : currentFilmImages && currentFilmImages.map((img) => 
-          <CarouselItemFull imageUrl={img.imageUrl} key={img.imageUrl}/>)
-        }
-      </Carousel>
-      <div className="cross" onClick={handleHideGallery}>&times;</div>
+      {showGallery && <div className="gallery_container"
+      >
+        <Carousel pageWidth={1000} imgCount={1} imgWidth={1000} imgHeight={800}>
+          { 
+            !isImageLoaded
+            ? <img 
+            className='item' 
+            src="https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/a9b7373f-8165-4d2f-a960-8caa2fb38cc1/300x" 
+            alt="123" />
+            : currentFilmImages && currentFilmImages.map((img) => 
+            <CarouselItemFull imageUrl={img.imageUrl} key={img.imageUrl}/>)
+          }
+        </Carousel>
+        <div className="cross" onClick={handleHideGallery}>&times;</div>
       </div>}
       <div className="title_container">
         <h1 className='film-page__title'>{film.nameRu}</h1>

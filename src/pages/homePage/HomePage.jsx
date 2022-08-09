@@ -18,6 +18,14 @@ const HomePage = () => {
     dispatch(getAxiosFilms(currentPage))
   }, [currentPage, dispatch])
 
+const handlePageSelect = (page) => {
+  dispatch(setCurrentPage(page))
+  page !== currentPage && window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
+
   return (
     
     <div className="home-page">
@@ -32,7 +40,7 @@ const HomePage = () => {
         {pages.map((page) => <span 
           className={currentPage === page ? 'current-page' : 'page'} 
           key={page}
-          onClick={() => dispatch(setCurrentPage(page))}
+          onClick={() => handlePageSelect(page)}
           >
           {page}
           </span>
